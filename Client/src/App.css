@@ -1,0 +1,327 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Josefin Sans", sans-serif;
+}
+.container {
+  margin: auto;
+  width: 50%;
+}
+header nav {
+  margin-bottom: 2rem;
+}
+.button {
+  font-size: 1.2rem;
+  padding: 0.8rem 1.2rem;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+  background: none;
+  cursor: pointer;
+  text-decoration: none;
+  margin-right: 0.5rem;
+}
+
+.App {
+  width: 100vw;
+  min-height: 100vh;
+}
+.App.dark {
+  background-color: hsl(235, 21%, 11%);
+}
+.App.light {
+  background-color: hsl(236, 33%, 92%);
+}
+.App.dark * {
+  color: hsl(234, 39%, 85%);
+}
+header {
+  z-index: 1;
+  width: 100vw;
+  height: 40vh;
+  padding-top: 2rem;
+}
+nav {
+  font-size: 2rem;
+  width: 100%;
+  display: flex;
+  /* margin-top: 1rem; */
+  justify-content: space-between;
+}
+.App.dark header {
+  background: url("/src/images/bg-desktop-dark.jpg") no-repeat center center
+    fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.App.light header {
+  background: url("/src/images/bg-desktop-light.jpg") no-repeat fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.todo-header-container {
+  width: 100%;
+  display: flex;
+  margin-top: 1rem;
+  justify-content: space-between;
+}
+
+.todo-header-container h1 {
+  text-transform: uppercase;
+  letter-spacing: 1rem;
+  font-size: 3rem;
+  color: white;
+}
+
+.Todos {
+  transform: translateY(-4rem);
+}
+.Todos .todos-list {
+  /* padding: 2rem 0rem; */
+  border-radius: 10px;
+  overflow: hidden;
+}
+.Todos .todos-list li {
+  list-style: none;
+}
+.Todos input.todo-item {
+  border-radius: 10px;
+  margin-bottom: 2rem;
+  border: none !important;
+}
+.Todos .todo-item {
+  width: 100%;
+  /* cursor: pointer; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 2rem;
+  font-size: 1.4rem;
+  outline: none;
+  border: none;
+  width: 100%;
+}
+.todo-item .todo-body {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.todo-item .delete-todo {
+  cursor: pointer;
+  opacity: 0;
+}
+.App.light .Todos .todo-item {
+  border-bottom: 1px solid hsl(235, 21%, 11%);
+}
+.App.dark .Todos .todo-item {
+  border-bottom: 1px solid white;
+}
+
+.Todos .todo-item.todos-footer {
+  font-size: 1rem;
+  border-bottom: none;
+}
+.App.dark .todo-item {
+  background-color: hsl(235, 24%, 19%);
+}
+.App.light .todo-item {
+  background-color: white;
+}
+.todo-checker {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 100%;
+  margin-right: 1.2rem;
+  border: 2px solid gray;
+  cursor: pointer;
+}
+.App.dark .todo-item:hover .todo-checker {
+  background: linear-gradient(hsl(235, 24%, 19%), hsl(235, 24%, 19%))
+      padding-box,
+    linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%)) border-box;
+  border-radius: 50em;
+  border: 2px solid transparent;
+}
+.todo-item:hover .delete-todo {
+  opacity: 1;
+}
+.App.light .todo-item:hover .todo-checker {
+  background: linear-gradient(white, white) padding-box,
+    linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%)) border-box;
+  border-radius: 50em;
+  border: 2px solid transparent;
+}
+.App .todo-item.done:hover .todo-checker {
+  border: none;
+  background: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+}
+.todo-item.done div {
+  text-decoration: line-through;
+  color: rgb(94, 94, 94) !important;
+}
+
+.todo-item.done .todo-checker {
+  background: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+  border: none;
+}
+.todo-item .checkmark {
+  opacity: 0;
+}
+.todo-item:hover .checkmark {
+  opacity: 0.4;
+}
+.todo-item.done .checkmark {
+  opacity: 1;
+}
+input.todo-item {
+  cursor: text !important;
+}
+.theme-toggler {
+  cursor: pointer;
+}
+.todos-footer {
+  border: none !important;
+}
+.delete-button {
+  width: 100%;
+  margin-top: 6rem;
+}
+.filters-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.filters-container div {
+  padding: 1rem;
+  cursor: pointer;
+}
+.filters-container .clear {
+  cursor: pointer;
+}
+.App.dark .button {
+  background-color: hsl(235, 24%, 19%);
+  color: white;
+}
+.App.light .button {
+  background-color: white;
+  color: hsl(235, 24%, 19%);
+}
+.Auth .todo-item {
+  margin-bottom: 1rem !important;
+}
+
+.button.submit {
+  background: rgb(53, 148, 53) !important;
+}
+.button.signout {
+  font-size: 1rem;
+  padding: 0.8rem 1.2rem;
+  background: rgb(212, 48, 48) !important;
+}
+.Auth .change {
+  width: 100%;
+  /* text-align: center; */
+  margin-top: 1rem;
+  font-size: 1.2rem;
+}
+.App.dark .Auth .change a {
+  color: white;
+}
+.App.light .Auth .change a {
+  color: black;
+}
+#error-page .errors-body {
+  width: 100%;
+  min-height: 100vh;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  line-height: 2;
+}
+.todo-header-container a {
+  text-decoration: none;
+  color: white;
+}
+.sub-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* display: inline; */
+}
+.sub-nav .button {
+  margin-right: 3rem;
+}
+.error {
+  color: rgb(172, 0, 0);
+  padding-bottom: 1rem;
+}
+.App.dark .error {
+  color: rgb(255, 58, 58);
+  padding-bottom: 1rem;
+}
+.success {
+  color: rgb(0, 172, 0);
+  padding-bottom: 1rem;
+}
+.App.dark .success {
+  color: rgb(58, 255, 58);
+  padding-bottom: 1rem;
+}
+#error-page .errors-body h1 {
+  font-size: 3rem;
+}
+@media (max-width: 1024px) {
+  .container {
+    width: 80%;
+  }
+}
+@media (max-height: 600px) {
+  .Todos {
+    transform: translateY(-2rem);
+  }
+}
+@media (min-height: 800px) {
+  .Todos {
+    transform: translateY(-10rem);
+  }
+}
+@media (max-width: 580px) {
+  .todo-item .delete-todo {
+    opacity: 1;
+  }
+  .container {
+    width: 90%;
+  }
+
+  .Todos .todo-item {
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+  .todos-footer > div {
+    width: 100%;
+  }
+  .todos-footer {
+    display: flex;
+    text-align: left;
+    flex-direction: column;
+  }
+  .filters-container {
+    justify-content: flex-start;
+  }
+  .filters-container div:first-child {
+    padding-left: 0;
+  }
+}
